@@ -7,6 +7,7 @@ import Loadable from 'ui-component/Loadable';
 
 // sample page routing
 const SamplePage = Loadable(lazy(() => import('views/sample-page')));
+const FormPage = Loadable(lazy(() => import('views/form')));
 
 // ==============================|| MAIN ROUTING ||============================== //
 
@@ -25,6 +26,10 @@ const MainRoutes = {
         {
             path: '/sample-page',
             element: <SamplePage />
+        },
+        {
+            path: '/form',
+            element: <FormPage />
         }
     ]
 };
