@@ -1,0 +1,79 @@
+{
+    "DemoGraphicInfo": [
+      {
+        "id": "3.4.1",
+        "question": "Sex",
+        "type": "dropdown"
+      },
+      {
+        "id": "3.4.2",
+        "question": "Race",
+        "type": "multiple_select"
+      },
+      {
+        "id": "3.4.3",
+        "question": "Ethnicity",
+        "type": "multiple_select"
+      },
+      {
+        "id": "3.4.4",
+        "question": "Tribal Affiliation",
+        "type": "dependent_text",
+        "isDepend": "true",
+        "dependentId": "3.4.2"
+      },
+      {
+        "id": "3.4.5",
+        "question": "Tribal Services",
+        "type": "dependent_text",
+        "isDepend": "true",
+        "dependentId": "3.4.2"
+      },
+      {
+        "id": "3.4.6",
+        "question": "Disability",
+        "type": "text"
+      },
+      {
+        "id": "3.4.7",
+        "question": "Preferred Language",
+        "type": "text"
+      },
+      {
+        "id": "3.4.8",
+        "question": "Sexual Orientation",
+        "type": "text"
+      },
+      {
+        "id": "3.4.9",
+        "question": "Gender Identification",
+        "type": "text"
+      },
+      {
+        "id": "3.4.10",
+        "question": "Employment Status",
+        "type": "dropdown"
+      },
+      {
+        "id": "3.4.11",
+        "question": "Veteran Status",
+        "type": "dropdown"
+      },
+      {
+        "id": "3.4.12",
+        "question": "Immigration Status",
+        "type": "dropdown"
+      },
+      {
+        "id": "3.4.13",
+        "question": "Health Care Coverage Status",
+        "type": "dropdown"
+      },
+      {
+        "id": "3.4.14",
+        "question": "Country of Residence",
+        "type": "dropdown",
+        "": {}
+      }
+    ]
+  }

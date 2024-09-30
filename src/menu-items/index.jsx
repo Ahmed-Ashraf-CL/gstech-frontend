@@ -1,10 +1,11 @@
-import samplePage from './sample-page';
-import pages from './pages';
+import formPage from './form';
+import formDetailList from './formTableView';
+// import pages from './pages';
 
 // ==============================|| MENU ITEMS ||============================== //
 
 const menuItems = {
-    items: [samplePage, pages]
+    items: [formPage, formDetailList]
 };
 
 export default menuItems;

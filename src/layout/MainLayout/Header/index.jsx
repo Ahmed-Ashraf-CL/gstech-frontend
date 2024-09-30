@@ -7,7 +7,6 @@ import useMediaQuery from '@mui/material/useMediaQuery';
 // project imports
 import useConfig from 'hooks/useConfig';
 import LogoSection from '../LogoSection';
-import SearchSection from './SearchSection';
 import MobileSection from './MobileSection';
 import ProfileSection from './ProfileSection';
 import LocalizationSection from './LocalizationSection';
@@ -39,7 +38,7 @@ const Header = () => {
                 <Box component="span" sx={{ display: { xs: 'none', md: 'block' }, flexGrow: 1 }}>
                     <LogoSection />
                 </Box>
-                {!isHorizontal && (
+                {/* {!isHorizontal && (
                     <Avatar
                         variant="rounded"
                         sx={{
@@ -59,30 +58,28 @@ const Header = () => {
                     >
                         <IconMenu2 stroke={1.5} size="20px" />
                     </Avatar>
-                )}
+                )} */}
             </Box>
 
-            {/* header search */}
-            <SearchSection />
             <Box sx={{ flexGrow: 1 }} />
             <Box sx={{ flexGrow: 1 }} />
 
             {/* mega-menu */}
             <Box sx={{ display: { xs: 'none', md: 'block' } }}>
-                <MegaMenuSection />
+                {/* <MegaMenuSection /> */}
             </Box>
 
             {/* live customization & localization */}
             <Box sx={{ display: { xs: 'none', sm: 'block' } }}>
-                <LocalizationSection />
+                {/* <LocalizationSection /> */}
             </Box>
 
             {/* notification */}
-            <NotificationSection />
+            {/* <NotificationSection /> */}
 
             {/* full sceen toggler */}
             <Box sx={{ display: { xs: 'none', lg: 'block' } }}>
-                <FullScreenSection />
+                {/* <FullScreenSection /> */}
             </Box>
 
             {/* profile */}

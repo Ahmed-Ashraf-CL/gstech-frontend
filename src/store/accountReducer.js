@@ -1,12 +1,13 @@
 // action - state management
-import { LOGIN, LOGOUT, REGISTER } from './actions';
+import { CARE_QUESTIONS, LOGIN, LOGOUT, REGISTER } from './actions';
 
 // ==============================|| ACCOUNT REDUCER ||============================== //
 
 const initialState = {
     isLoggedIn: false,
     isInitialized: false,
-    user: null
+    user: null,
+    careQuestions: null
 };
 
 const accountReducer = (state = initialState, action) => {
@@ -33,6 +34,13 @@ const accountReducer = (state = initialState, action) => {
                 isInitialized: true,
                 isLoggedIn: false,
                 user: null
+            };
+        }
+        case CARE_QUESTIONS: {
+            const { careQuestions } = action.payload;
+            return {
+                ...state,
+                careQuestions
             };
         }
         default: {

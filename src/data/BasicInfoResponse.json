@@ -1,0 +1,49 @@
+{
+    "BasicInfoForm": [
+      {
+        "id": "3.3.1",
+        "question": "County",
+        "type": "dropdown"
+      },
+      {
+        "id": "3.3.2",
+        "question": "Current First Name",
+        "type": "text"
+      },
+      {
+        "id": "3.3.3",
+        "question": "Current Last Name",
+        "type": "text"
+      },
+      {
+        "id": "3.3.4",
+        "question": "DOB",
+        "type": "DatePicker"
+      },
+      {
+        "id": "SSN",
+        "question": "SSN",
+        "type": "text"
+      },
+      {
+        "id": "3.3.6",
+        "question": "Petition Case Number",
+        "type": "text"
+      },
+      {
+        "id": "3.3.7",
+        "question": "Petition File Date",
+        "type": "Date"
+      },
+      {
+        "id": "3.3.8",
+        "question": "Date Of Investigation",
+        "type": "Date"
+      },
+      {
+        "id": "3.3.8",
+        "question": "Original Petitioner",
+        "type": "text"
+      }
+    ]
+  }

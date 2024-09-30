@@ -13,6 +13,7 @@ import ThemeCustomization from 'themes';
 
 // auth provider
 import { JWTProvider as AuthProvider } from 'contexts/JWTContext';
+import { CAREProvider as QuestionProvider } from 'contexts/CAREContext';
 
 // ==============================|| APP ||============================== //
 
@@ -22,12 +23,14 @@ const App = () => {
             <Locales>
                 <NavigationScroll>
                     <AuthProvider>
+                        <QuestionProvider>
                         <>
                             <Notistack>
                                 <RouterProvider router={router} />
                                 <Snackbar />
                             </Notistack>
                         </>
+                        </QuestionProvider>
                     </AuthProvider>
                 </NavigationScroll>
             </Locales>

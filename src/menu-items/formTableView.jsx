@@ -4,19 +4,19 @@
 import { FormattedMessage } from 'react-intl';
 
 // assets
-import { IconBrandChrome } from '@tabler/icons-react';
+import { IconListDetails } from '@tabler/icons-react';
 
 // ==============================|| MENU ITEMS - SAMPLE PAGE ||============================== //
 
 const icons = {
-    IconBrandChrome
+    IconListDetails
 };
-const samplePage = {
-    id: 'sample-page',
-    title: <FormattedMessage id="sample-page" />,
-    icon: icons.IconBrandChrome,
+const formDetailList = {
+    id: 'Health Form List',
+    title: <FormattedMessage id="Health Form List" />,
+    icon: icons.IconListDetails,
     type: 'group',
-    url: '/sample-page'
+    url: '/form/list'
 };
 
-export default samplePage;
+export default formDetailList;

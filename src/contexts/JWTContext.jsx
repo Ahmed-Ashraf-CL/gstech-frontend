@@ -6,7 +6,7 @@ import { Chance } from 'chance';
 import { jwtDecode } from 'jwt-decode';
 
 // reducer - state management
-import { LOGIN, LOGOUT } from 'store/actions';
+import { CARE_QUESTIONS, LOGIN, LOGOUT } from 'store/actions';
 import accountReducer from 'store/accountReducer';
 
 // project imports
@@ -19,7 +19,8 @@ const chance = new Chance();
 const initialState = {
     isLoggedIn: false,
     isInitialized: false,
-    user: null
+    user: null,
+    careQuestions: null
 };
 
 const verifyToken = (serviceToken) => {
@@ -30,7 +31,7 @@ const verifyToken = (serviceToken) => {
     /**
      * Property 'exp' does not exist on type '<T = unknown>(token, options) => T'.
      */
-    return decoded.exp > Date.now() / 1000;
+    return decoded.exp > (Date.now() / 1000);
 };
 
 const setSession = (serviceToken) => {
@@ -55,8 +56,8 @@ export const JWTProvider = ({ children }) => {
                 const serviceToken = window.localStorage.getItem('serviceToken');
                 if (serviceToken && verifyToken(serviceToken)) {
                     setSession(serviceToken);
-                    const response = await axios.get(`/api/account/me`);
-                    const { user } = response.data;
+                    const response = await axios.get(`/api/v1/auth/me`);
+                    const user = response.data;
                     dispatch({
                         type: LOGIN,
                         payload: {
@@ -82,8 +83,8 @@ export const JWTProvider = ({ children }) => {
 
     const login = async (email, password) => {
         const response = await axios.post('/api/v1/auth/email/login', { email, password });
-        const { serviceToken, user } = response.data;
-        setSession(serviceToken);
+        const { token, user } = response.data;
+        setSession(token);
         dispatch({
             type: LOGIN,
             payload: {
@@ -126,7 +127,6 @@ export const JWTProvider = ({ children }) => {
     };
 
     const resetPassword = async (email) => {
-        console.log(email);
         const response = await axios.post(`/api/v1/auth/forgot/password`, {
             email,
         });
@@ -138,7 +138,6 @@ export const JWTProvider = ({ children }) => {
     if (state.isInitialized !== undefined && !state.isInitialized) {
         return <Loader />;
     }
-
     return (
         <JWTContext.Provider value={{ ...state, login, logout, register, resetPassword, updateProfile }}>{children}</JWTContext.Provider>
     );
