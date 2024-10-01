@@ -50,9 +50,32 @@ const JWTContext = createContext(null);
 export const JWTProvider = ({ children }) => {
     const [state, dispatch] = useReducer(accountReducer, initialState);
 
+    // After successful login, handle token extraction
+const handleCallback = () => {
+    // Parse the URL to get the tokens and user data
+    const params = new URLSearchParams(window.location.search);
+    const token = params.get('token');
+    const refreshToken = params.get('refreshToken');
+    const user = params.get('user');
+  
+    if (token && refreshToken && user) {
+      setSession(token)
+      localStorage.setItem('refreshToken', refreshToken);
+      localStorage.setItem('user', user);
+  
+      window.location.href = '/form';
+    } else {
+      console.error('No tokens found in callback URL');
+    }
+  };
+  
+
     useEffect(() => {
         const init = async () => {
             try {
+                if (window.location.pathname === '/auth/callback') {
+                    handleCallback();
+                  }
                 const serviceToken = window.localStorage.getItem('serviceToken');
                 if (serviceToken && verifyToken(serviceToken)) {
                     setSession(serviceToken);

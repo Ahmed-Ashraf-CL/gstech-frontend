@@ -173,8 +173,6 @@ const Form = () => {
 								careForm[key] = data[key].length > 0 ? data[key]: careForm[key];
 							}
 						}
-					} else {
-						console.log('hello')
 					}
 				}
 				setCareForm(careForm);
